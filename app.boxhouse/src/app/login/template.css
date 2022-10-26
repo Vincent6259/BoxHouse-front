@@ -1,1 +1,24 @@
-content { display: block; width: 100%; height: 100%; }
+/* -- CONTENT -- */
+content{ position: relative; z-index: 2; display: block; width: 100%; height: 100%; padding-top: 100px; margin: 0; pointer-events: none; background-color: rgb(244,245,246);  }
+
+/* -- CONTAINER --*/
+content .container{ display: block; margin: auto; max-width: 800px; position: relative; }
+
+/* -- CARD --*/
+content .container .card{ display: block; width: 100%; height: auto; text-align: center; background-color: white; border-radius: 10px; box-shadow: 0 5px 28px 0 rgba(0,0,0,0.1); }
+
+/* -- TOP --*/
+content .container .card .top { display: block; width: 100%; background-color: rgb(244,245,246); }
+
+/* -- BODY --*/
+content .container .card .body { display: block; width: 100%; background-color: rgb(244,245,246); }
+
+/* -- IMG CONTAINER --*/
+content .container .card .img-container{ width: 150px; margin: auto; height: auto; text-align: center;  }
+content .container .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
+
+/* -- LOGIN INPUT --*/
+content .container .card .login-input{ }
+content .container .card .login-input input{ }
+
+content .container .card .signin-link{ }
