@@ -6,8 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template.css']
 })
 export class LoginComponent implements OnInit {
+  private users;
 
-  constructor() { }
+  constructor(){
+    // -- Properties
+    this.users = [
+      {
+        firstname:"",
+        lastname: "",
+        mail: "",
+      },
+    ]
+  }
 
   ngOnInit(): void {
   }
