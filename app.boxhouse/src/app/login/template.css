@@ -7,9 +7,6 @@ content .container{ display: block; margin: auto; max-width: 800px; position: re
 /* -- CARD --*/
 content .container .card{ display: block; width: 100%; height: auto; text-align: center; background-color: white; border-radius: 10px; box-shadow: 0 5px 28px 0 rgba(0,0,0,0.1); }
 
-/* -- TOP --*/
-content .container .card .top { display: block; width: 100%; background-color: rgb(244,245,246); }
-
 /* -- BODY --*/
 content .container .card .body { display: block; width: 100%; background-color: rgb(244,245,246); }
 
