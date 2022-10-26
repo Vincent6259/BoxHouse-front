@@ -10,15 +10,13 @@ content .container .card{ display: block; width: 100%; height: auto; text-align:
 /* -- TOP --*/
 content .container .card .top { display: block; width: 100%; background-color: rgb(244,245,246); }
 
-/* -- BODY --*/
-content .container .card .body { display: block; width: 100%; background-color: rgb(244,245,246); }
 
 /* -- IMG CONTAINER --*/
 content .container .card .img-container{ width: 150px; margin: auto; height: auto; text-align: center;  }
 content .container .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
 
 /* -- LOGIN INPUT --*/
-content .container .card .login-input{ }
+content .container .card .login-input{ padding: 10px 10px;  }
 content .container .card .login-input input{ }
 
 content .container .card .signin-link{ }
