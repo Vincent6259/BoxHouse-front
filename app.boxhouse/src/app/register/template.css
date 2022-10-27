@@ -17,7 +17,7 @@ content .container .card .body { display: block; width: 100%; }
 content .container .card .footer { display: block; width: 100%; height: 1px; }
 
 /* -- IMG CONTAINER --*/
-content .container .card .img-container{ width: 150px; margin: auto; height: auto; text-align: center;  }
+content .container .card .img-container{ width: 200px; margin: auto; height: auto; text-align: center;  }
 content .container .card .img-container img{ width: 100%; object-fit: cover; height: 100%;}
 content .container .card .img-container-register img { width: 100%; object-fit: cover; height: 100%; filter: invert(52%) sepia(18%) saturate(0%) hue-rotate(243deg) brightness(93%) contrast(103%);}
 
