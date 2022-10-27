@@ -7,10 +7,12 @@ import { HomeComponent}         from './home/home.component'
 
 const routes: Routes = [
   { path: '', component: LoginComponent, },
+  { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
-
 ]
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

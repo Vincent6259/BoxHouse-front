@@ -8,21 +8,26 @@ content .container{ display: block; margin: auto; max-width: 500px; position: re
 content .container .card{ display: block; width: 100%; height: 50%; text-align: center; background-color: white; border-radius: 10px; box-shadow: 0 5px 28px 0 rgba(0,0,0,0.1); }
 
 /* -- TOP --*/
-content .container .card .top { display: block; width: 100%; background-color: rgb(244,245,246); }
+content .container .card .top{ display: block; width: 100%; background-color: rgb(244,245,246); }
 
 /* -- BODY --*/
 content .container .card .body { display: block; width: 100%; }
 
 /* -- FOOTER --*/
-content .container .card .footer { display: block; width: 100%; height: 70px; }
+content .container .card .footer { display: block; width: 100%; height: 1px; }
 
 /* -- IMG CONTAINER --*/
 content .container .card .img-container{ width: 150px; margin: auto; height: auto; text-align: center;  }
-content .container .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
+content .container .card .img-container img{ width: 100%; object-fit: cover; height: 100%;}
+content .container .card .img-container-register img { width: 100%; object-fit: cover; height: 100%; filter: invert(52%) sepia(18%) saturate(0%) hue-rotate(243deg) brightness(93%) contrast(103%);}
 
 /* -- REGISTER INPUT --*/
 content .container .card .body .register-input{ display: block; width: 100%; height: auto; box-sizing: border-box; white-space: initial; margin-top: 10px; margin-bottom: 10px; position: relative; white-space: initial; }
-content .container .card .body .register-input img { position: absolute; height: 30px; width: 30px; top: 9px; left: 15px; }
-content .container .card .body .register-input input{ width: calc(100% - 20px); box-sizing: border-box; border: none; border-radius: 3px; padding: 15px 0px; padding-left: 50px; margin: 0; background-color: rgb(244,245,246); color: #4D5455; font-size: 14px; }
+content .container .card .body .register-input:nth-child(1){ margin-top: 40px; }
+content .container .card .body .register-input img { position: absolute; height: 30px; width: 30px; top: 9px; left: 85px; pointer-events: none;}
+content .container .card .body .register-input input{ width: 70%; box-sizing: border-box; border: none; border-radius: 3px; padding: 15px 0px; padding-left: 50px; margin: 0; background-color: rgb(244,245,246); color: #4D5455; font-size: 14px; }
 
+/* -- REGISTER BUTTON **/
+content .container .card .body .register-button button{ display: block; width: auto; margin: auto; height: auto; background-color: #9181fa; color: white; border-radius: 3px; padding: 10px 25px; margin-top: 40px; margin-bottom: 40px; text-align: center; font-family: poppins-regular, sans-serif; font-size: 16px; text-transform: uppercase; cursor: pointer; }
 content .container .card .signin-link{ }
+
