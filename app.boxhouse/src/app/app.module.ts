@@ -9,6 +9,7 @@ import { HomeComponent }     from './home/home.component';
 import { Auth }              from './core/Auth';
 import { AccountComponent } from './account/account.component';
 import { MenuComponent } from './menu/menu.component';
+import { QRcodeComponent } from './qrcode/qrcode.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MenuComponent } from './menu/menu.component';
     RegisterComponent,
     AccountComponent,
     MenuComponent,
+    QRcodeComponent,
 
   ],
   imports: [
