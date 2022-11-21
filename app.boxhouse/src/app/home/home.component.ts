@@ -18,8 +18,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.session = JSON.parse(sessionStorage.getItem('session'))
-    console.log(this.session)
     this.load()
+  }
+
+  async bindEvents(){
+    for(let button of this.buttons){
+      button.addEventListener('click', function(e){
+        window.location.href = settings.url.frontend+''+button.link
+      })
+    }
   }
 
   async load(){
@@ -27,22 +34,27 @@ export class HomeComponent implements OnInit {
       {
         el    :document.getElementsByClassName('card')[0],
         color :'#A64253',
+        link  : '/account',
       },
       {
         el    :document.getElementsByClassName('card')[1],
         color :'#d8a870',
+        link  : '/object',
       },
       {
         el    :document.getElementsByClassName('card')[2],
         color :'#BBDBB4',
+        link  : '/box',
       },
       {
         el    :document.getElementsByClassName('card')[3],
         color :'#9181fa',
+        link  : '/qrcode',
       },
     ]
 
     await this.loadColor()
+    await this.bindEvents()
 
   }
 
