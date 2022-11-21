@@ -1,0 +1,16 @@
+/* -- CONTENT -- */
+content{width: 100%; height: 100%;}
+
+/* -- CONTAINER --*/
+content .container{width: 100%; height: 100%;}
+
+/* -- CARD --*/
+content .container .card{width: 100%; height: 100%;}
+
+/* -- TOP --*/
+content .container .card .top{width: 100%; height: 100%;}
+
+/* -- BODY --*/
+content .container .card .body{}
+
+
