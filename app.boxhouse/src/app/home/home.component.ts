@@ -18,12 +18,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.session = JSON.parse(sessionStorage.getItem('session'))
+    console.log(this.session)
     this.load()
   }
 
   async bindEvents(){
     for(let button of this.buttons){
-      button.addEventListener('click', function(e){
+      button.el.addEventListener('click', function(e){
         window.location.href = settings.url.frontend+''+button.link
       })
     }
@@ -51,6 +52,11 @@ export class HomeComponent implements OnInit {
         color :'#9181fa',
         link  : '/qrcode',
       },
+      {
+        el    :document.getElementsByClassName('card')[4],
+        color :'#9181fa',
+        link  : '/scan',
+      },
     ]
 
     await this.loadColor()
@@ -60,8 +66,8 @@ export class HomeComponent implements OnInit {
 
   async loadColor(){
     let filter = null
-    for(let i = 0; i < 4; i++){
-      if(i != 3){
+    for(let i = 0; i < this.buttons.length; i++){
+      if(i < 3){
         filter = await this.toolbox.hexToFilter('#FFFFFF')
         this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
       }
