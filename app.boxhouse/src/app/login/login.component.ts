@@ -11,7 +11,7 @@ const settings = require('../../settings.js') // ALWAYS IMPORT
 export class LoginComponent implements OnInit {
   private users;
 
-  constructor(private boxhouse: Auth){
+  constructor(private auth: Auth){
     // -- Properties
     this.users = [
       {
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
       if(mail == user.mail && pass == user.password){
         el_error.style.display = "none"
         el_error.innerHTML  = ""
-        await this.boxhouse.createSession(user.pk_id,user.mail,user.firstname,user.lastname)
+        await this.auth.createSession(user.pk_id,user.mail,user.firstname,user.lastname)
         window.location.href         = settings.url.frontend+'/home'
       }else{
         el_error.style.display = "block"

@@ -7,12 +7,14 @@ import { LoginComponent }    from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent }     from './home/home.component';
 import { Auth }              from './core/Auth';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    AccountComponent,
 
   ],
   imports: [

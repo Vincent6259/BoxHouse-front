@@ -19,6 +19,7 @@ export class Auth {
       this.session.core.auth.firstname = mail
       this.session.core.auth.lastname  = firstname
       this.session.core.auth.mail      = lastname
-
+      let session = this.session
+      sessionStorage.setItem('session' , JSON.stringify(session))
     }
 }
