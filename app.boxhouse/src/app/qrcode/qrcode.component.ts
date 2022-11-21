@@ -11,6 +11,7 @@ export class QRcodeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.load()
   }
 
   async bindEvents(){
@@ -19,7 +20,6 @@ export class QRcodeComponent implements OnInit {
     let generateQRcode = document.getElementById('generateQRcode')
 
     generateQRcode.addEventListener('click', function(e){
-        console.log('coucou')
         self.generateQRcode('https://google.com')
     })
   }
@@ -33,10 +33,12 @@ export class QRcodeComponent implements OnInit {
     document.getElementById("qrcode").innerHTML = ''
 
     let qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 200,
+        height: 200,
         text: link,
         logo: "../../assets/shared/img/img-box.png",
-        logoWidth: undefined,
-        logoHeight: undefined,
+        logoWidth: 50,
+        logoHeight: 50,
         logoBackgroundColor: '#ffffff',
         logoBackgroundTransparent: false
     });
