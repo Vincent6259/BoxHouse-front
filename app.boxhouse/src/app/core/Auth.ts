@@ -17,10 +17,14 @@ export class Auth {
 
       this.session.core.auth.pk_id     = pk_id
       this.session.core.auth.mail      = mail
-      this.session.core.auth.firstname = firstname
-      this.session.core.auth.lastname  = lastname
+      this.session.core.auth.lastname  = firstname
+      this.session.core.auth.firstname = lastname
 
       let session = this.session
       sessionStorage.setItem('session' , JSON.stringify(session))
+    }
+
+    public async disconnect(){
+      sessionStorage.removeItem('session')
     }
 }
