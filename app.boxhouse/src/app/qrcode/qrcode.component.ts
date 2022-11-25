@@ -56,7 +56,6 @@ export class QRcodeComponent implements OnInit {
   async load(){
 
     await this.bindEvents()
-
     await this.loadList()
   }
 
@@ -79,12 +78,13 @@ export class QRcodeComponent implements OnInit {
   async loadList(){
     let self = this
 
-    let list = document.getElementById('PageQRcode_boxlist')
+    let list   = document.getElementById('PageQRcode_boxlist')
+    let el_box = null
 
     // BOX
     for( let box of this.box ){
         // Vars
-        let el_box:Element = document.createElement('div')
+        el_box = document.createElement('div')
         list.appendChild(el_box)
         el_box.outerHTML   = await this.generateBoxHTML(box)
         el_box             = list.lastElementChild // need after outerhtml
@@ -93,15 +93,18 @@ export class QRcodeComponent implements OnInit {
   }
 
   async generateBoxHTML(box){
+    let i    = 0
+    /* TEMP */
+    for(let object of box.objects)
+      i ++
+    /*     */
+    let types = []
     let html =`
       <div class="row">
         <div class="img-container"><img src="../../assets/shared/img/icon-box.svg"/></div>
         <div class="name">${ box.name }</div>
         <div class="type">${ box.type }</div>
-        <div class="object">`
-          for(let object of box.objects)
-            object
-        `</div>
+        <div class="object">Il y a ${i} object(s) associé(s) a cette boite</div>
       </div>
     `
     return html
