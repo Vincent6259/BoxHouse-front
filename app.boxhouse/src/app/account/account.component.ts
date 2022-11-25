@@ -52,7 +52,6 @@ export class AccountComponent implements OnInit {
 
     logout_button.addEventListener('click', async function(e) {
       await self.doLogout()
-      return 0
     })
 
   }
