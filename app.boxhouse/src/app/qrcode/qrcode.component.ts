@@ -104,7 +104,7 @@ export class QRcodeComponent implements OnInit {
         <div class="img-container"><img src="../../assets/shared/img/icon-box.svg"/></div>
         <div class="name">${ box.name }</div>
         <div class="type">${ box.type }</div>
-        <div class="object">Il y a ${i} object(s) associé(s) a cette boite</div>
+        <div class="object">Il y a ${i} objet(s) associé(s) à cette boite</div>
       </div>
     `
     return html
