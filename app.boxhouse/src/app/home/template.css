@@ -14,7 +14,7 @@ content .body .card{ display: inline-block; vertical-align: middle; height: 25vh
 content .body .card:nth-child(1){ margin-top: 20px;}
 content .body .card .text{ font-size: 20px; margin-top: 20px; }
 @media (max-width: 900px) {
-    content .body .card .text{ font-size: 15px; margin-top: 5px; }
+    content .body .card .text{ font-size: 15px; margin-top: 10px; }
 }
 content .body .card .img-container{ width: 100px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
 content .body .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
@@ -22,5 +22,5 @@ content .body .card .img-container img{ width: 100%; object-fit: cover; height: 
 
 /* width */
 
-.w50{ width:calc(50% - 20px); }
-.w100{ width: calc( 100% - 20px); }
+.w50{ width:calc(45% - 30px); }
+.w100{ width: calc( 90% - 40px); }
