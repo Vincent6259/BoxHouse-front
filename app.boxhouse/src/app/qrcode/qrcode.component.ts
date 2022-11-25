@@ -84,7 +84,7 @@ export class QRcodeComponent implements OnInit {
     // BOX
     for( let box of this.box ){
         // Vars
-        let el_box = document.createElement('div')
+        let el_box:Element = document.createElement('div')
         list.appendChild(el_box)
         el_box.outerHTML   = await this.generateBoxHTML(box)
         el_box             = list.lastElementChild // need after outerhtml
