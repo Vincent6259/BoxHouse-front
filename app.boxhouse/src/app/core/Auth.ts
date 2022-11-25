@@ -23,4 +23,8 @@ export class Auth {
       let session = this.session
       sessionStorage.setItem('session' , JSON.stringify(session))
     }
+
+    public async disconnect(){
+      sessionStorage.removeItem('session')
+    }
 }

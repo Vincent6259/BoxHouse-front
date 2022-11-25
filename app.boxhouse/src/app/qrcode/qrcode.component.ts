@@ -117,7 +117,8 @@ export class QRcodeComponent implements OnInit {
       if( color.type === box.type)
         filter_color = await this.toolbox.hexToFilter(color.color)
     }
-    el.getElementsByTagName('img').style.filter = filter_color.split(':')[1].slice(0, -1)
+    console.log(el)
+    el.getElementsByTagName('img')[0].style.filter = filter_color.split(':')[1].slice(0, -1)
   }
 
 }

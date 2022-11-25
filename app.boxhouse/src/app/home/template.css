@@ -22,5 +22,5 @@ content .body .card .img-container img{ width: 100%; object-fit: cover; height: 
 
 /* width */
 
-.w50{ width:calc(45% - 30px); }
-.w100{ width: calc( 90% - 40px); }
+.w50{ width:calc(50% - 20px); }
+.w100{ width: calc( 100% - 20px); }
