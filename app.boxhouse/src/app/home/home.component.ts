@@ -48,7 +48,12 @@ export class HomeComponent implements OnInit {
         link  : '/qrcode',
       },
       {
-        el    :document.getElementsByClassName('round')[3],
+        el    :document.getElementsByClassName('card')[3],
+        color :'#aab7b8',
+        link  : '/warehouse',
+      },
+      {
+        el    :document.getElementsByClassName('round')[0],
         color :'#A64253',
         link  : '/account',
       },
@@ -65,11 +70,15 @@ export class HomeComponent implements OnInit {
   }
 
   async loadColor(){
+
     let filter = null
     for(let i = 0; i < this.buttons.length; i++){
-      filter = await this.toolbox.hexToFilter('#FFFFFF')
-      this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+      if( i !== 2 && i !== 3){
+        filter = await this.toolbox.hexToFilter('#FFFFFF')
+        this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+      }
       this.buttons[i].el.style.backgroundColor = this.buttons[i].color
+
     }
 
 
