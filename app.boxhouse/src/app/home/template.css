@@ -12,15 +12,15 @@ content .header .text{ font-size: 15px; color: #424B54; }
 /* CARD */
 content .body .card{ display: inline-block; vertical-align: middle; height: 25vh ; padding: 10px; border: 1px solid lightgrey; margin: 10px; border-radius: 10px; text-align: center; box-sizing: border-box; color: white; cursor: pointer; }
 content .body .card:nth-child(1){ margin-top: 20px;}
-content .body .card .text{ font-size: 20px; margin-top: 20px; }
+content .body .card .text{font-size: 20px; margin-top: 20px; }
 @media (max-width: 900px) {
-    content .body .card .text{ font-size: 15px; margin-top: 10px; }
+    content .body .card .text{font-size: 15px; margin-top: 10px; }
 }
-content .body .card .img-container{ width: 100px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
+content .body .card .img-container{width: 100px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
 content .body .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
 
-content .body .round{ display: block; width: 50px; height: 50px;position: absolute; border-radius: 100px;}
-content .body .round .img-container { display: block; width: 30px; height: 50px; }
+content .body .round{display: block; width: 50px; height: 50px;position: absolute; border-radius: 100px;}
+content .body .round .img-container {display: block; width: 30px; height: 50px; }
 content .body .round .img-container img {object-fit: cover;}
 /* width */
 
