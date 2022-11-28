@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
 
     let filter = null
     for(let i = 0; i < this.buttons.length; i++){
-      if( i !== 2 && i !== 3){
+      if( i !== 2 && i !== 3 ){
         filter = await this.toolbox.hexToFilter('#FFFFFF')
         this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
       }
