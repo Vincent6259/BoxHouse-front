@@ -34,26 +34,26 @@ export class HomeComponent implements OnInit {
     this.buttons = [
       {
         el    :document.getElementsByClassName('card')[0],
-        color :'#A64253',
-        link  : '/account',
-      },
-      {
-        el    :document.getElementsByClassName('card')[1],
         color :'#d8a870',
         link  : '/object',
       },
       {
-        el    :document.getElementsByClassName('card')[2],
+        el    :document.getElementsByClassName('card')[1],
         color :'#BBDBB4',
         link  : '/box',
       },
       {
-        el    :document.getElementsByClassName('card')[3],
+        el    :document.getElementsByClassName('card')[2],
         color :'#9181fa',
         link  : '/qrcode',
       },
       {
-        el    :document.getElementsByClassName('card')[4],
+        el    :document.getElementsByClassName('round')[3],
+        color :'#A64253',
+        link  : '/account',
+      },
+      {
+        el    :document.getElementsByClassName('round')[1],
         color :'#9181fa',
         link  : '/scan',
       },
@@ -67,10 +67,8 @@ export class HomeComponent implements OnInit {
   async loadColor(){
     let filter = null
     for(let i = 0; i < this.buttons.length; i++){
-      if(i < 3){
-        filter = await this.toolbox.hexToFilter('#FFFFFF')
-        this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
-      }
+      filter = await this.toolbox.hexToFilter('#FFFFFF')
+      this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
       this.buttons[i].el.style.backgroundColor = this.buttons[i].color
     }
 
