@@ -7,6 +7,7 @@ import { HomeComponent}         from './home/home.component'
 import { AccountComponent}      from './account/account.component'
 import { QRcodeComponent}       from './qrcode/qrcode.component'
 import { BoxComponent }         from './box/box.component'
+import { ObjectComponent }      from './object/object.component'
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent},
   { path: 'qrcode', component: QRcodeComponent},
   { path: 'box', component: BoxComponent},
+  { path: 'object', component: ObjectComponent},
 ]
 
 

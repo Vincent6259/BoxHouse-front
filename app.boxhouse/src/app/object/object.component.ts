@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-object',
-  templateUrl: './object.component.html',
-  styleUrls: ['./object.component.css']
+  templateUrl: './template.html',
+  styleUrls: ['./template.css']
 })
 export class ObjectComponent implements OnInit {
 
