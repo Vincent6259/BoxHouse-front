@@ -64,12 +64,12 @@ export class HomeComponent implements OnInit {
     this.rounds = [
       {
         el    :document.getElementsByClassName('round')[0],
-        color :'#A64253',
+        color :'#FFFFFF',
         link  : '/account',
       },
       {
         el    :document.getElementsByClassName('round')[1],
-        color :'#9181fa',
+        color :'black',
         link  : '/scan',
       },
     ]
@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
     let filter = null
     for(let i = 0; i < this.rounds.length; i++){
       if( i !== 1){
-        filter = await this.toolbox.hexToFilter('#FFFFFF')
+        filter = await this.toolbox.hexToFilter('#000000')
         this.rounds[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
       }
       this.rounds[i].el.style.backgroundColor = this.rounds[i].color
