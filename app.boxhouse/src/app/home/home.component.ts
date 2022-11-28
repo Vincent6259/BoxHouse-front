@@ -10,7 +10,8 @@ const settings = require('../../settings.js')
 export class HomeComponent implements OnInit {
 
   private session
-  private buttons
+  private cards
+  private rounds
   private toolbox = new Toolbox()
 
   constructor() {
@@ -23,15 +24,21 @@ export class HomeComponent implements OnInit {
   }
 
   async bindEvents(){
-    for(let button of this.buttons){
-      button.el.addEventListener('click', function(e){
-        window.location.href = settings.url.frontend+''+button.link
+    for(let card of this.cards){
+      card.el.addEventListener('click', function(e){
+        window.location.href = settings.url.frontend+''+card.link
+      })
+    }
+
+    for(let round of this.rounds){
+      round.el.addEventListener('click', function(e){
+        window.location.href = settings.url.frontend+''+round.link
       })
     }
   }
 
   async load(){
-    this.buttons = [
+    this.cards = [
       {
         el    :document.getElementsByClassName('card')[0],
         color :'#d8a870',
@@ -52,6 +59,9 @@ export class HomeComponent implements OnInit {
         color :'#aab7b8',
         link  : '/warehouse',
       },
+    ]
+
+    this.rounds = [
       {
         el    :document.getElementsByClassName('round')[0],
         color :'#A64253',
@@ -64,24 +74,34 @@ export class HomeComponent implements OnInit {
       },
     ]
 
-    await this.loadColor()
+    await this.loadCardColor()
+    await this.loadRoundColor()
     await this.bindEvents()
 
   }
 
-  async loadColor(){
-
+  async loadCardColor(){
     let filter = null
-    for(let i = 0; i < this.buttons.length; i++){
+    for(let i = 0; i < this.cards.length; i++){
       if( i !== 2 && i !== 3 ){
         filter = await this.toolbox.hexToFilter('#FFFFFF')
-        this.buttons[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+        this.cards[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
       }
-      this.buttons[i].el.style.backgroundColor = this.buttons[i].color
+      this.cards[i].el.style.backgroundColor = this.cards[i].color
 
     }
+  }
 
+  async loadRoundColor(){
+    let filter = null
+    for(let i = 0; i < this.rounds.length; i++){
+      if( i !== 1){
+        filter = await this.toolbox.hexToFilter('#FFFFFF')
+        this.rounds[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+      }
+      this.rounds[i].el.style.backgroundColor = this.rounds[i].color
 
+    }
   }
 
 }
