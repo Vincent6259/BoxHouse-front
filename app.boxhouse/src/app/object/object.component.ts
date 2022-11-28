@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template.css']
 })
 export class ObjectComponent implements OnInit {
+  private object
+  constructor() { 
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
+
 
 }

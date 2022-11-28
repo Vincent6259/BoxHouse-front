@@ -22,7 +22,7 @@ export class QRcodeComponent implements OnInit {
       { pk_id:5, name:'Canapé', type:'living-room', objects: [9,10] },
       { pk_id:6, name:'Pelle', type:'garden', objects: [11,12] },
       { pk_id:7, name:'Mamie', type:'attic', objects: [12,14] },
-      { pk_id:8, name:'PS6', type:'high-tec', objects: [15,16] },
+      { pk_id:8, name:'PS6', type:'high-tech', objects: [15,16] },
       { pk_id:9, name:'Kamasutra', type:'book', objects: [17,18] },
     ]
 
