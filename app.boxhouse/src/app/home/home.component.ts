@@ -34,22 +34,22 @@ export class HomeComponent implements OnInit {
     this.buttons = [
       {
         el    :document.getElementsByClassName('card')[0],
-        color :'#A64253',
+        color :'#d8a870',
         link  : '/account',
       },
       {
         el    :document.getElementsByClassName('card')[1],
-        color :'#d8a870',
+        color :'#BBDBB4',
         link  : '/object',
       },
       {
         el    :document.getElementsByClassName('card')[2],
-        color :'#BBDBB4',
+        color :'#9181fa',
         link  : '/box',
       },
       {
         el    :document.getElementsByClassName('card')[3],
-        color :'#9181fa',
+        color :'#858585',
         link  : '/qrcode',
       },
       {
