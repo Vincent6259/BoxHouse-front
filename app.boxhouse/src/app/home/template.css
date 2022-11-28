@@ -20,8 +20,9 @@ content .body .card .img-container{width: 100px; margin: auto; height: auto; tex
 content .body .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
 
 content .body .round{display: block; width: 50px; height: 50px;position: absolute; border-radius: 100px;}
-content .body .round .img-container {display: block; width: 30px; height: 50px; }
+content .body .round .img-container {display: block; width: 30px; height: 50px;}
 content .body .round .img-container img {object-fit: cover;}
+
 /* width */
 
 .w50{ width:calc(50% - 20px); }
