@@ -42,12 +42,12 @@ export class HomeComponent implements OnInit {
       {
         el    :document.getElementsByClassName('card')[0],
         color :'#d8a870',
-        link  : '/object',
+        link  : '/box',
       },
       {
         el    :document.getElementsByClassName('card')[1],
         color :'#BBDBB4',
-        link  : '/box',
+        link  : '/object',
       },
       {
         el    :document.getElementsByClassName('card')[2],

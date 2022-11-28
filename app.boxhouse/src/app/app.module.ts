@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { QRcodeComponent } from './qrcode/qrcode.component';
 import { ScanComponent } from './scan/scan.component';
 import { BoxComponent } from './box/box.component';
+import { ObjectComponent } from './object/object.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BoxComponent } from './box/box.component';
     QRcodeComponent,
     ScanComponent,
     BoxComponent,
+    ObjectComponent,
 
   ],
   imports: [
