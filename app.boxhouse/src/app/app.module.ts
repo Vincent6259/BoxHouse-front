@@ -10,6 +10,7 @@ import { Auth }              from './core/Auth';
 import { AccountComponent } from './account/account.component';
 import { MenuComponent } from './menu/menu.component';
 import { QRcodeComponent } from './qrcode/qrcode.component';
+import { ScanComponent } from './scan/scan.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { QRcodeComponent } from './qrcode/qrcode.component';
     AccountComponent,
     MenuComponent,
     QRcodeComponent,
+    ScanComponent,
 
   ],
   imports: [

@@ -22,3 +22,4 @@ content .body .card .qrcodecontainer img{ width: 100%; object-fit: cover; height
 content .body .card button { display: block; margin: auto; width: 80%; margin-top: 15px; color: white; background-color: #9181fa; pointer-events: all; cursor: pointer; }
 
 content .body .list { display: block; margin: auto; width: 100%; max-width: 800px; background-color: rgb(243,244,245); border-radius: 10px; box-sizing: border-box; }
+content .body .list .row { display: block; margin: auto; width: 100%; background-color: rgb(243,244,245); border-radius: 10px; box-sizing: border-box; cursor: pointer; }
