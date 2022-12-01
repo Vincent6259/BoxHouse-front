@@ -1,6 +1,6 @@
 module.exports = {
   url: {
     frontend: "http://localhost:4200",
-    backend:  "Indisponible actuellement",
+    backend:  "http://localhost:3000",
   },
 }

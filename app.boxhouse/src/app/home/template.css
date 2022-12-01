@@ -19,7 +19,7 @@ content .header .search .btnsearch img {  height: 20px; }
 
 
 /* CARD */
-content .body .card{ display: inline-block; vertical-align: middle; height: 25vh ; padding: 10px; border: 1px solid lightgrey; margin: 10px; border-radius: 10px; text-align: center; box-sizing: border-box; color: white; cursor: pointer; background-image: url("../../assets/shared/img/icon-box.svg"); }
+content .body .card{ display: inline-block; vertical-align: middle; height: 25vh ; padding: 10px; border: 1px solid lightgrey; margin: 10px; border-radius: 10px; text-align: center; box-sizing: border-box; color: white; cursor: pointer; background-image: url("../../assets/shared/img/img-background-home.png"); }
 content .body .card:nth-child(1){ margin-top: 20px;}
 content .body .card .text{font-size: 20px; margin-top: 20px; }
 @media (max-width: 900px) {
