@@ -1,9 +1,13 @@
-import Color    from './Color.js'
-import Solver   from './Solver.js'
+const settings       = require('../../../settings.js')
+import { Database }  from '../../../app/core/Database.js'
+import Color         from './Color.js'
+import Solver        from './Solver.js'
 
 export default class Toolbox{
 
     constructor(){
+      this.data     = null
+      this.database = new Database()
     }
     async init(){
         //...
@@ -40,6 +44,20 @@ export default class Toolbox{
           parseInt(result[3], 16),
         ]
         : null
+    }
+
+    async doNotFuckWithMe(){
+      if(window.location.href !== settings.url.frontend+'/'){
+        if(!sessionStorage.getItem('session') )
+          window.location.href = settings.url.frontend+'/'
+        else{
+          let session = JSON.parse(sessionStorage.getItem('session'))
+          this.data   = await this.database.get({ collection:'user', mail:session.mail, pass:session.pass, })
+          if( this.data === 'nok_user' || this.data.pk_id !== session.pk_id && this.data.mail !== session.mail && this.data.firstame !== session.firstame ){
+            window.location.href = settings.url.frontend+'/'
+          }
+        }
+      }
     }
 
 }

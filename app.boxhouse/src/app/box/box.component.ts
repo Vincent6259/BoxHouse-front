@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Toolbox               from '../../assets/shared/js/Toolbox.js'
+
+
 
 @Component({
   selector: 'app-box',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template.css']
 })
 export class BoxComponent implements OnInit {
-
-  constructor() { }
+  private toolbox = new Toolbox()
+  constructor() {
+    this.toolbox.doNotFuckWithMe()
+   }
 
   ngOnInit(): void {
   }

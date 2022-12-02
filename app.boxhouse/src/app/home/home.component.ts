@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
   private rounds
   private toolbox = new Toolbox()
 
-  constructor() {}
+  constructor() {
+    this.toolbox.doNotFuckWithMe()
+  }
 
   ngOnInit(): void {
     this.session = JSON.parse(sessionStorage.getItem('session'))
@@ -40,22 +42,18 @@ export class HomeComponent implements OnInit {
     this.cards = [
       {
         el    :document.getElementsByClassName('card')[0],
-        color :'#d8a870',
         link  : '/box',
       },
       {
         el    :document.getElementsByClassName('card')[1],
-        color :'#BBDBB4',
         link  : '/object',
       },
       {
         el    :document.getElementsByClassName('card')[2],
-        color :'#9181fa',
         link  : '/qrcode',
       },
       {
         el    :document.getElementsByClassName('card')[3],
-        color :'#aab7b8',
         link  : '/warehouse',
       },
     ]
@@ -73,23 +71,22 @@ export class HomeComponent implements OnInit {
       },
     ]
 
-    await this.loadCardColor()
     await this.loadRoundColor()
     await this.bindEvents()
 
   }
 
-  async loadCardColor(){
-    let filter = null
-    for(let i = 0; i < this.cards.length; i++){
-      if( i !== 2 && i !== 3 ){
-        filter = await this.toolbox.hexToFilter('#FFFFFF')
-        this.cards[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
-      }
-      this.cards[i].el.style.backgroundColor = this.cards[i].color
-
-    }
-  }
+//   async loadCardColor(){
+//     let filter = null
+//     for(let i = 0; i < this.cards.length; i++){
+//       if( i !== 2 && i !== 3 ){
+//         filter = await this.toolbox.hexToFilter('#FFFFFF')
+//         this.cards[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+//       }
+//       this.cards[i].el.style.backgroundColor = this.cards[i].color
+//
+//     }
+//   }
 
   async loadRoundColor(){
     let filter = null

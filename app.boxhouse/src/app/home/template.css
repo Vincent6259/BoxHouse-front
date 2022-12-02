@@ -19,14 +19,23 @@ content .header .search .btnsearch img {  height: 20px; }
 
 
 /* CARD */
-content .body .card{ display: inline-block; vertical-align: middle; height: 25vh ; padding: 10px; border: 1px solid lightgrey; margin: 10px; border-radius: 10px; text-align: center; box-sizing: border-box; color: white; cursor: pointer; background-image: url("../../assets/shared/img/img-background-home.png"); }
-content .body .card:nth-child(1){ margin-top: 20px;}
+content .body .card{position: relative; display: inline-block;  vertical-align: top; margin-top: 100px; width: 25%; height: auto; padding: 10px; text-align: center; box-sizing: border-box; background-color: #9181fa; color: white; cursor: pointer; }
+
 content .body .card .text{font-size: 20px; margin-top: 20px; }
 @media (max-width: 900px) {
     content .body .card .text{font-size: 15px; margin-top: 10px; }
 }
-content .body .card .img-container{width: 100px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
+content .body .card .img-container{width: 75px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
+content .body .card .img-container.background{ width: 200px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
+@media (max-width: 900px) {
+    content .body .card .img-container.background{width: 150px; margin: auto; height: auto; text-align: center; border-radius: 10px;  }
+}
+content .body .card .img-container.icon:nth-child(1){ top: 75px; left: 85px; }
+content .body .card .img-container.icon:nth-child(2){ top: 75px; left: 85px; }
+content .body .card .img-container.icon:nth-child(3){ top: 75px; left: 85px; }
+content .body .card .img-container.icon:nth-child(4){ top: 75px; left: 85px; }
 content .body .card .img-container img{ width: 100%; object-fit: cover; height: 100%; }
+
 
 content .body .round{display: block; width: 40px; height: 40px;position: absolute; border-radius: 100px;  cursor: pointer; }
 content .body .round.account{ top: 0%; left: 10px;}
