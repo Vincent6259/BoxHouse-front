@@ -23,3 +23,6 @@ content .body .card button { display: block; margin: auto; width: 80%; margin-to
 
 content .body .list { display: block; margin: auto; width: 100%; max-width: 800px; background-color: rgb(243,244,245); border-radius: 10px; box-sizing: border-box; }
 content .body .list .row { display: block; margin: auto; width: 100%; background-color: rgb(243,244,245); border-radius: 10px; box-sizing: border-box; cursor: pointer; }
+
+/* FOOTER */
+content .footer { display: block; width: 100%; height: 60px; position: absolute; bottom: 0;}

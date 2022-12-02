@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-scan',
-  templateUrl: './scan.component.html',
-  styleUrls: ['./scan.component.css']
+  templateUrl: './template.html',
+  styleUrls: ['./template.css']
 })
 export class ScanComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() { 
+
+  }
+
 
   ngOnInit(): void {
   }
-
 }

@@ -8,6 +8,7 @@ import { AccountComponent}      from './account/account.component'
 import { QRcodeComponent}       from './qrcode/qrcode.component'
 import { BoxComponent }         from './box/box.component'
 import { ObjectComponent }      from './object/object.component'
+import { ScanComponent }        from './scan/scan.component'
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'qrcode', component: QRcodeComponent},
   { path: 'box', component: BoxComponent},
   { path: 'object', component: ObjectComponent},
+  { path: 'scan', component: ScanComponent},
 ]
 
 

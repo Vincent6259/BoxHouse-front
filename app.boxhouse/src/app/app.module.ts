@@ -25,12 +25,12 @@ import { ObjectComponent } from './object/object.component';
     ScanComponent,
     BoxComponent,
     ObjectComponent,
-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
+
   providers: [Auth],
   bootstrap: [AppComponent]
 })

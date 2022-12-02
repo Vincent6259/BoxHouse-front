@@ -33,19 +33,16 @@ export class MenuComponent implements OnInit {
       window.location.href = settings.url.frontend+'/home'
     })
     button_box.addEventListener('click', function(e){
-      alert("Pas encore disponible")
-      //window.location.href = settings.url.frontend+'/account'
+      window.location.href = settings.url.frontend+'/box'
     })
     button_object.addEventListener('click', function(e){
-      alert("Pas encore disponible")
-      //window.location.href = settings.url.frontend+'/account'
+      window.location.href = settings.url.frontend+'/account'
     })
     button_qrcode.addEventListener('click', function(e){
       window.location.href = settings.url.frontend+'/qrcode'
     })
     button_scan.addEventListener('click', function(e){
-      alert("Pas encore disponible")
-      //window.location.href = settings.url.frontend+'/account'
+      window.location.href = settings.url.frontend+'/account'
     })
 
   }

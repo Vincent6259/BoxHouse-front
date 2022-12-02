@@ -14,7 +14,7 @@ export class QRcodeComponent implements OnInit {
   private toolbox = new Toolbox();
 
   constructor(){
-    this.box = [
+    this.box = [ /*
       { pk_id:1, name:'Couteaux/Fourchettes', type:'kitchen', objects: [1,2] },
       { pk_id:2, name:'PQ & other', type:'toilet', objects: [3,4] },
       { pk_id:3, name:'Assiettes', type:'dining-room', objects: [5,6] },
@@ -24,9 +24,11 @@ export class QRcodeComponent implements OnInit {
       { pk_id:7, name:'Mamie', type:'attic', objects: [12,14] },
       { pk_id:8, name:'PS6', type:'high-tech', objects: [15,16] },
       { pk_id:9, name:'Kamasutra', type:'book', objects: [17,18] },
+      */
     ]
 
     this.colors = [
+      /*
       { pk_id:1, color:'#1afa7c', type:'kitchen' },
       { pk_id:2, color:'#e450dd', type:'toilet'},
       { pk_id:3, color:'#295dff', type:'dining-room'},
@@ -36,6 +38,7 @@ export class QRcodeComponent implements OnInit {
       { pk_id:7, color:'#dd1818', type:'attic'},
       { pk_id:8, color:'#f9b73c', type:'high-tec'},
       { pk_id:9, color:'#6f5555', type:'book'},
+      */
     ]
   }
 
