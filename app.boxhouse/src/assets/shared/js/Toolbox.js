@@ -63,7 +63,8 @@ export default class Toolbox{
         else{
           let session = JSON.parse(sessionStorage.getItem('session'))
           this.data   = await this.database.get({ collection:'user', mail:session.core.auth.mail, pk_id: session.core.auth.pk_id  })
-          if( this.data !== 'nok_user' || this.data.pk_id === session.core.auth.pk_id && this.data.mail === session.core.auth.mail && this.data.firstame === session.core.auth.firstame ){
+          if( this.data !== 'nok_user' || this.data.pk_id === session.core.auth.pk_id && this.data.mail === session.core.auth.mail && this.data.firstame === session.core.auth.firstame
+              && this.data.lastname === session.core.auth.lastname ){
             window.location.href = settings.url.frontend+'/home'
           }
         }
