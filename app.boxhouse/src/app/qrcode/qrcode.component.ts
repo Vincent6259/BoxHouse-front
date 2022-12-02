@@ -14,32 +14,9 @@ export class QRcodeComponent implements OnInit {
   private toolbox = new Toolbox();
 
   constructor(){
-    this.box = [ /*
-      { pk_id:1, name:'Couteaux/Fourchettes', type:'kitchen', objects: [1,2] },
-      { pk_id:2, name:'PQ & other', type:'toilet', objects: [3,4] },
-      { pk_id:3, name:'Assiettes', type:'dining-room', objects: [5,6] },
-      { pk_id:4, name:'Savonnette', type:'bathroom', objects: [7,8] },
-      { pk_id:5, name:'Canapé', type:'living-room', objects: [9,10] },
-      { pk_id:6, name:'Pelle', type:'garden', objects: [11,12] },
-      { pk_id:7, name:'Mamie', type:'attic', objects: [12,14] },
-      { pk_id:8, name:'PS6', type:'high-tech', objects: [15,16] },
-      { pk_id:9, name:'Kamasutra', type:'book', objects: [17,18] },
-      */
-    ]
 
-    this.colors = [
-      /*
-      { pk_id:1, color:'#1afa7c', type:'kitchen' },
-      { pk_id:2, color:'#e450dd', type:'toilet'},
-      { pk_id:3, color:'#295dff', type:'dining-room'},
-      { pk_id:4, color:'#3ca3f9', type:'bathroom'},
-      { pk_id:5, color:'#a70dc2', type:'living-room'},
-      { pk_id:6, color:'#14a906', type:'garden'},
-      { pk_id:7, color:'#dd1818', type:'attic'},
-      { pk_id:8, color:'#f9b73c', type:'high-tec'},
-      { pk_id:9, color:'#6f5555', type:'book'},
-      */
-    ]
+    this.toolbox.doNotFuckWithMe()
+
   }
 
   ngOnInit(): void {
@@ -86,12 +63,12 @@ export class QRcodeComponent implements OnInit {
 
     // BOX
     for( let box of this.box ){
-        // Vars
-        el_box = document.createElement('div')
-        list.appendChild(el_box)
-        el_box.outerHTML   = await this.generateBoxHTML(box)
-        el_box             = list.lastElementChild // need after outerhtml
-        this.loadBoxColor(el_box,box) // Load pictures async
+        // // Vars
+        // el_box = document.createElement('div')
+        // list.appendChild(el_box)
+        // el_box.outerHTML   = await this.generateBoxHTML(box)
+        // el_box             = list.lastElementChild // need after outerhtml
+        // this.loadBoxColor(el_box,box) // Load pictures async
     }
   }
 

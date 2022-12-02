@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Toolbox               from '../../assets/shared/js/Toolbox.js'
 
 @Component({
   selector: 'app-scan',
@@ -6,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template.css']
 })
 export class ScanComponent implements OnInit {
+  private toolbox = new Toolbox()
 
-
-  constructor() { 
-
-  }
-
+  constructor() {
+    this.toolbox.doNotFuckWithMe()
+   }
 
   ngOnInit(): void {
   }
