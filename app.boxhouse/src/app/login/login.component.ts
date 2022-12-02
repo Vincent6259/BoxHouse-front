@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Auth }              from '../core/Auth'
+import { Database }          from '../core/Database.js'
 
 const settings = require('../../settings.js') // ALWAYS IMPORT
 
@@ -9,33 +10,12 @@ const settings = require('../../settings.js') // ALWAYS IMPORT
   styleUrls: ['./template.css']
 })
 export class LoginComponent implements OnInit {
-  private users;
+  private data;
+  private database = new Database()
 
   constructor(private auth: Auth){
     // -- Properties
-    this.users = [
-      {
-        pk_id:    1,
-        firstname:"Gwenaël",
-        lastname: "Auger",
-        mail: "auger.gwenael@icloud.com",
-        password: "AZERTY",
-      },
-      {
-        pk_id:    2,
-        firstname:"Evan",
-        lastname: "Rougetet",
-        mail: "evan.rougetet@spie.com",
-        password: "AZERTY",
-      },
-      {
-        pk_id:    3,
-        firstname:"Vincent",
-        lastname: "Legout",
-        mail: "legout.vincent6259@gmail.com",
-        password: "AZERTY",
-      },
-    ]
+    this.data = null
   }
 
   ngOnInit(): void {
@@ -69,17 +49,18 @@ export class LoginComponent implements OnInit {
   }
 
   async doLogin(mail: any, pass: any){
-    let el_error     = document.getElementsByClassName('error')[0] as any // Remove Error "property does not exist on value of type"
-    for(let user of this.users){
-      if(mail == user.mail && pass == user.password){
-        el_error.style.display = "none"
-        el_error.innerHTML  = ""
-        await this.auth.createSession(user.pk_id,user.mail,user.firstname,user.lastname)
-        window.location.href         = settings.url.frontend+'/home'
-      }else{
-        el_error.style.display = "block"
-        el_error.innerHTML  = "IDENTIFIANTS INVALIDES"
-      }
+    let el_error = document.getElementsByClassName('error')[0] as any // Remove Error "property does not exist on value of type"
+    this.data    = await this.database.get({ collection:'user', mail:mail, pass:pass, })
+    console.log(this.data)
+
+    if(this.data !== 'nok_user'){
+      el_error.style.display = "none"
+      el_error.innerHTML  = ""
+      await this.auth.createSession(this.data.pk_id,this.data.mail,this.data.firstname,this.data.lastname)
+      window.location.href         = settings.url.frontend+'/home'
+    }else{
+      el_error.style.display = "block"
+      el_error.innerHTML  = "IDENTIFIANTS INVALIDES"
     }
   }
 

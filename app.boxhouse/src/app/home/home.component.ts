@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
   private rounds
   private toolbox = new Toolbox()
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.session = JSON.parse(sessionStorage.getItem('session'))
