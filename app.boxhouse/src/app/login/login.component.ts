@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Auth }              from '../core/Auth'
 import { Database }          from '../core/Database.js'
-
-const settings = require('../../settings.js') // ALWAYS IMPORT
+import Toolbox               from '../../assets/shared/js/Toolbox.js'
+const settings  = require('../../settings.js') // ALWAYS IMPORT
 
 @Component({
   selector: 'app-login',
@@ -12,10 +12,12 @@ const settings = require('../../settings.js') // ALWAYS IMPORT
 export class LoginComponent implements OnInit {
   private data;
   private database = new Database()
+  private toolbox  = new Toolbox()
 
   constructor(private auth: Auth){
     // -- Properties
     this.data = null
+    this.toolbox.doNotFuckWithMe()
   }
 
   ngOnInit(): void {
@@ -51,7 +53,6 @@ export class LoginComponent implements OnInit {
   async doLogin(mail: any, pass: any){
     let el_error = document.getElementsByClassName('error')[0] as any // Remove Error "property does not exist on value of type"
     this.data    = await this.database.get({ collection:'user', mail:mail, pass:pass, })
-    console.log(this.data)
 
     if(this.data !== 'nok_user'){
       el_error.style.display = "none"

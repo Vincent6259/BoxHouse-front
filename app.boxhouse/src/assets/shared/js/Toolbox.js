@@ -52,9 +52,19 @@ export default class Toolbox{
           window.location.href = settings.url.frontend+'/'
         else{
           let session = JSON.parse(sessionStorage.getItem('session'))
-          this.data   = await this.database.get({ collection:'user', mail:session.mail, pass:session.pass, })
-          if( this.data === 'nok_user' || this.data.pk_id !== session.pk_id && this.data.mail !== session.mail && this.data.firstame !== session.firstame ){
-            window.location.href = settings.url.frontend+'/'
+          let mail    = session.core.auth.mail
+          this.data   = await this.database.get({ collection:'user', mail:session.core.auth.mail, pk_id: session.core.auth.pk_id  })
+          if( this.data === 'nok_user' || this.data.pk_id !== session.core.auth.pk_id && this.data.mail !== session.core.auth.mail && this.data.firstame !== session.core.auth.firstame ){
+           window.location.href = settings.url.frontend+'/'
+          }
+        }
+      }else if(window.location.href === settings.url.frontend+'/'){
+        if( !sessionStorage.getItem('session') ){/* STAY ON LOGIN PAGE */ }
+        else{
+          let session = JSON.parse(sessionStorage.getItem('session'))
+          this.data   = await this.database.get({ collection:'user', mail:session.core.auth.mail, pk_id: session.core.auth.pk_id  })
+          if( this.data !== 'nok_user' || this.data.pk_id === session.core.auth.pk_id && this.data.mail === session.core.auth.mail && this.data.firstame === session.core.auth.firstame ){
+            window.location.href = settings.url.frontend+'/home'
           }
         }
       }

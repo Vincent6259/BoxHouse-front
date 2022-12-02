@@ -67,6 +67,7 @@ export class Database {
         args.mail        = args.mail        || null
         args.pass        = args.pass        || null
         args.params      = args.params      || []
+        args.pk_id       = args.pk_id       || null
 
         // [ONLINE]
         if( window.navigator.onLine == true ){
@@ -79,7 +80,11 @@ export class Database {
                     else          endofurl+=`&${encodeURI(key)}=${encodeURI(value)}`
                 }
             }
-            response = JSON.parse( await network.promiseGet( settings.url.backend+'/'+args.collection+'/'+args.mail+'/'+args.pass+endofurl ) )
+            if(args.pk_id)
+              response = JSON.parse( await network.promiseGet( settings.url.backend+'/'+args.collection+'/'+args.mail+'/'+args.pk_id+endofurl ) )
+            else
+              response = JSON.parse( await network.promiseGet( settings.url.backend+'/'+args.collection+'/'+args.mail+'/'+args.pass+endofurl ) )
+
             if(response.error)
               single = 'nok_user'
             else
