@@ -71,22 +71,21 @@ export class HomeComponent implements OnInit {
       },
     ]
 
+    await this.loadCardColor()
     await this.loadRoundColor()
     await this.bindEvents()
 
   }
 
-//   async loadCardColor(){
-//     let filter = null
-//     for(let i = 0; i < this.cards.length; i++){
-//       if( i !== 2 && i !== 3 ){
-//         filter = await this.toolbox.hexToFilter('#FFFFFF')
-//         this.cards[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
-//       }
-//       this.cards[i].el.style.backgroundColor = this.cards[i].color
-//
-//     }
-//   }
+  async loadCardColor(){
+    let filter = null
+    for(let i = 0; i < this.cards.length; i++){
+        if(i === 0 || i === 1){
+          filter = await this.toolbox.hexToFilter('#FFFFFF')
+          this.cards[i].el.getElementsByTagName('img')[0].style.filter = filter.split(':')[1].slice(0, -1)
+        }
+      }
+  }
 
   async loadRoundColor(){
     let filter = null

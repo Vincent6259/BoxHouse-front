@@ -2,36 +2,53 @@
   <div class="header">
     <div class = "text">ACCUEIL</div>
     <div class="row">
-      <div class="search">
-          <input id="Home_search" type="text" placeholder="Rechercher un objet ou une boite" />
-          <div class="btnsearch"><img id="search_icon" src=".../../assets/shared/img/icon-qrcodescan.png"></div>
-      </div>
+
     </div>
   </div>
 
   <div class="body">
-
-    <div class="card">
-      <div class="img-container background"><img src="../../assets/shared/img/img-background-home.png" /></div>
-      <div class="img-container icon"><img src="../../assets/shared/img/icon-box.svg" /></div>
-      <div class = "text">Mes cartons</div>
+    <div class="rows">
+      <div class="row">
+        <div class="search">
+          <input id="Home_search" type="text" placeholder="Rechercher un objet ou une boite" />
+          <div class="btnsearch"><img id="search_icon" src=".../../assets/shared/img/icon-qrcodescan.png"></div>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <div class="img-container background"><img src="../../assets/shared/img/img-background-home.png" /></div>
-      <div class="img-container icon"><img src="../../assets/shared/img/icon-objects.png" /></div>
-      <div class = "text">Mes objets</div>
+    <div class="cardcontainer">
+      <div class="card">
+        <div class="img-container">
+          <div class="background">
+              <img class="icon" src="../../assets/shared/img/icon-box.svg" />
+              <div class = "text">Mes cartons</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img-container">
+          <div class="background">
+              <img class="icon" src="../../assets/shared/img/icon-objects.png" />
+              <div class = "text">Mes objets</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img-container">
+          <div class="background">
+              <img class="icon" src="../../assets/shared/img/icon-qrcode.png" />
+              <div class = "text">Mes QRCode</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img-container">
+          <div class="background">
+              <img class="icon" src="../../assets/shared/img/img-warehouse.png" />
+              <div class= "text">Gérer mes <br />zones de stockage</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <div class="img-container background"><img src="../../assets/shared/img/img-background-home.png" /></div>
-      <div class="img-container icon"><img src="../../assets/shared/img/icon-qrcode.png" /></div>
-      <div class = "text">Générer un QR code</div>
-    </div>
-    <div class="card">
-      <div class="img-container background"><img src="../../assets/shared/img/img-background-home.png" /></div>
-      <div class="img-container icon"><img src="../../assets/shared/img/img-warehouse.png" /></div>
-      <div class= "text">Gérer mes zones de stockage</div>
-    </div>
-
     <div class="round account">
       <div class="img-container"><img src="../../assets/shared/img/img-user.png" /></div>
     </div>
@@ -39,6 +56,5 @@
     <div class="round scan">
       <div class="img-container qr"><img src="../../assets/shared/img/icon-qrcodescan.png" /></div>
     </div>
-
   </div>
 </content>

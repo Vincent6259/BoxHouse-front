@@ -86,7 +86,7 @@ export class Database {
               response = JSON.parse( await network.promiseGet( settings.url.backend+'/'+args.collection+'/'+args.mail+'/'+args.pass+endofurl ) )
 
             if(response.error)
-              single = 'nok_user'
+              single = response.error
             else
               single = response
         }

@@ -29,7 +29,7 @@ export class QRcodeComponent implements OnInit {
     let generateQRcode = document.getElementById('generateQRcode')
 
     generateQRcode.addEventListener('click', function(e){
-        self.generateQRcode('https://google.com')
+        self.generateQRcode('http://api.boxhouse/box/2')
     })
   }
 
@@ -52,7 +52,6 @@ export class QRcodeComponent implements OnInit {
         logoBackgroundColor: '#ffffff',
         logoBackgroundTransparent: false
     });
-    console.log(qrcode)
   }
 
   async loadList(){

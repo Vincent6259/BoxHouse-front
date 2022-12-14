@@ -9,6 +9,7 @@ import { QRcodeComponent}       from './qrcode/qrcode.component'
 import { BoxComponent }         from './box/box.component'
 import { ObjectComponent }      from './object/object.component'
 import { ScanComponent }        from './scan/scan.component'
+import { BoxSingleComponent }    from './boxsingle/boxsingle.component'
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'box', component: BoxComponent},
   { path: 'object', component: ObjectComponent},
   { path: 'scan', component: ScanComponent},
+  { path: 'boxsingle/:id', component: BoxSingleComponent},
 ]
 
 

@@ -13,6 +13,7 @@ import { QRcodeComponent } from './qrcode/qrcode.component';
 import { ScanComponent } from './scan/scan.component';
 import { BoxComponent } from './box/box.component';
 import { ObjectComponent } from './object/object.component';
+import { BoxSingleComponent } from './boxsingle/boxsingle.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ObjectComponent } from './object/object.component';
     ScanComponent,
     BoxComponent,
     ObjectComponent,
+    BoxSingleComponent,
   ],
   imports: [
     BrowserModule,
