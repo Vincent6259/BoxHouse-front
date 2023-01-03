@@ -9,9 +9,7 @@ export class AccountComponent implements OnInit {
   private session
   private auth = new Auth()
 
-  constructor() {
-
-  }
+  constructor(){}
 
   ngOnInit(): void {
     this.session = JSON.parse(sessionStorage.getItem('session'))
@@ -60,5 +58,5 @@ export class AccountComponent implements OnInit {
       this.auth.disconnect()
     }
 
-  
+
 }

@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     // -- Properties
     this.data = null
     this.toolbox.doNotFuckWithMe()
+    let ma : {name: string} = {name: "etdtyr"}
   }
 
   ngOnInit(): void {
