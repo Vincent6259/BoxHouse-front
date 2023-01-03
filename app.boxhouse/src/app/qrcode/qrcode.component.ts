@@ -36,7 +36,7 @@ export class QRcodeComponent implements OnInit {
   async load(){
 
     await this.bindEvents()
-    await this.loadList()
+    
   }
 
   async generateQRcode(link){
