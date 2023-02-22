@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../core/Auth';
+const settings = require('../../settings.js')
 @Component({
   selector: 'app-account',
   templateUrl: './template.html',
@@ -16,12 +17,14 @@ export class AccountComponent implements OnInit {
     this.load()
   }
   async load(){
+    await this.bindEvents()
     await this.loadMail()
     await this.loadFirstname()
     await this.loadLastname()
   }
   async logout(){
-    this.session = null
+    //this.session = null
+    sessionStorage.clear()
   }
 
   async loadMail(){
@@ -50,12 +53,13 @@ export class AccountComponent implements OnInit {
 
     logout_button.addEventListener('click', async function(e) {
       await self.doLogout()
+      window.location.href = settings.url.frontend+'/'
     })
 
   }
 
     async doLogout(){
-      this.auth.disconnect()
+      await this.auth.disconnect()
     }
 
 
