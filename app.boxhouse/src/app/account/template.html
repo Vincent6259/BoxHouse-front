@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+
+<html>
+        <body>
+
+                <h1>Interface domotique</h1>
+                <div id="led">
+                        <input type="radio" name="contact"> M1
+                        <input type="radio" name="contact"> M2
+                        <input type="radio" name="contact"> M3
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script> <!-- include socket.io client side script -->
+                <script>
+                                var led = document.getElementById('light');
+
+                                var socket = io(); //load socket.io-client and connect to the host that serves the page
+                                window.addEventListener("load", function(){ //when page loads
+
+                                led.addEventListener("change", function() { //add event listener for when checkbox changes
+                                socket.emit(this.id, Number(this.checked)); //send button status to server (as 1 or 0)
+                                console.log(this.id)
+                          });
+
+                        });
+                </script>
+
+        </body>
+</html>
