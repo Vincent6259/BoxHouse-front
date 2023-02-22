@@ -2,8 +2,19 @@
 /* ========================== HOME =========================== */
 /* =========================================================== */
 
-#Menu{ position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 80%; height: 60px; }
+menu{ display: block; background-color: #accff7; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 80%; height: 70px; border-radius: 20px; pointer-events: none; opacity: 0; }
+menu>content { display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 100%; box-sizing: border-box; margin: auto;}
+menu>content>button{ display: inline-block; vertical-align: center; height: 50px; width: 20%; padding: 10px; background-color: transparent;  box-sizing:border-box; }
+menu content>button>img{ height: calc(50px - 10px); width: calc(50px - 10px); object-fit: cover; background-color: transparent; } 
+menu content>.segment{ display: inline-block; vertical-align: center; width: 20%; position: relative; } 
+menu content>.segment>.selector{ display: block; margin: auto; height: 5px; width: 5px; object-fit: cover; background-color: white; border-radius: 30px; 
+position: absolute; left: 50%; bottom: 5px; transform: translate(-50%, 0); }
 
-#Menu content {}
+@media (max-width: 900px) {
+    menu{ height: 60px; } 
+    menu>content>button{ padding: 5px; height: 35px; }
+    menu content>button>img{ height: calc(35px - 5px); width: calc(35px - 5px); }
+
+}
 
 

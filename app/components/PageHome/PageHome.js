@@ -1,5 +1,6 @@
-import Toolbox  from '../../shared/js/Toolbox.js'
+import Toolbox       from '../../shared/js/Toolbox.js'
 import { settings }  from '../../settings.js'
+import { bhouse }    from '../../bhouse.js'
 
 export default class PageHome {
 
@@ -10,13 +11,14 @@ export default class PageHome {
     this.rounds  = null
     this.toolbox = new Toolbox()
     this.name    = 'PageHome'
+    bhouse       = bhouse
   }
 
   async bindEvents(){
   }
 
   async load(){
-    
+    await bhouse.components.Menu.selectSegment(0)
     await this.bindEvents()
   }
   

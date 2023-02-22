@@ -1,12 +1,13 @@
-import Auth     from './core/Auth.js'
-import Database from './core/Database.js'
-import Network  from './core/Network.js'
-import Toolbox  from './shared/js/Toolbox.js'
+import Auth         from './core/Auth.js'
+import Database     from './core/Database.js'
+import Network      from './core/Network.js'
+import Toolbox      from './shared/js/Toolbox.js'
 
-import PageLogin     from '/components/PageLogin/PageLogin.js'
-import PageHome      from '/components/PageHome/PageHome.js'
-import { settings }  from './settings.js'
-import { bhouse }    from './bhouse.js'
+import PageLogin    from '/components/PageLogin/PageLogin.js'
+import PageHome     from '/components/PageHome/PageHome.js'
+import Menu         from '/components/Menu/Menu.js'
+import { settings } from './settings.js'
+import { bhouse }   from './bhouse.js'
 
 export default class PagesManager {
     
@@ -14,10 +15,16 @@ export default class PagesManager {
         
         let self          = this
         this.current_page = null
-        this.components       = [
-            { class: PageLogin, name: 'PageLogin', style:'template.css' },
-            { class: PageHome, name: 'PageHome', style:'template.css' },
-        ]
+        this.components       = {
+            pages: [
+                { class: PageLogin, name: 'PageLogin', style:'template.css' },
+                { class: PageHome,  name: 'PageHome',   style:'template.css' },
+            ],
+            tools: [
+                { class: Menu,      name: 'Menu',       style:'template.css' },
+            ]
+
+        }
         bhouse.core.toolbox  = new Toolbox()
         bhouse.core.auth     = new Auth()
         bhouse.core.database = new Database()
@@ -25,11 +32,15 @@ export default class PagesManager {
         
     }
     async load(){
-        for( let component of this.components ){
+        for( let component of this.components.tools ){
+            if( !bhouse.components[component.name] ) bhouse.components[component.name] = new component.class(bhouse) 
+        }
+        for( let component of this.components.pages ){
             if( !bhouse.components[component.name] ) bhouse.components[component.name] = new component.class(bhouse) 
         }
         
         await this.generateComponentTag()
+        
         await this.bindEvents()
         
         if( bhouse.core.auth.firstConnection() && !sessionStorage.getItem('session') )
@@ -55,9 +66,15 @@ export default class PagesManager {
             this.current_page = bhouse.components[page] // FIRST LOAD OF THE APP LOGICALLY
             let html = await bhouse.components[page].getHtml()
             await bhouse.components[page].toolbox.doNotFuckWithMe()
+            await bhouse.components[page].load()
             document.getElementById(this.current_page.name).innerHTML           = html
             document.getElementById(this.current_page.name).style.display       ='block'
             document.getElementById(this.current_page.name).style.pointerEvents ='all'
+            if(this.current_page.name !== 'PageLogin')
+                await bhouse.components.Menu.showMenu()
+            else if(this.current_page.name === 'PageLogin')
+                await bhouse.components.Menu.hideMenu()
+            
             await bhouse.components[page].bindEvents()
         }
         else if ( this.current_page !== null ) {
@@ -66,6 +83,11 @@ export default class PagesManager {
             let html = await bhouse.components[page].getHtml()
             document.getElementById(this.current_page.name).innerHTML = html
             setTimeout(async function (){
+                if(self.current_page.name !== 'PageLogin')
+                    await bhouse.components.Menu.showMenu()
+                else if(self.current_page.name === 'PageLogin')
+                    await bhouse.components.Menu.hideMenu()
+                    
                 document.getElementById(self.current_page.name).style.display='block'
                 document.getElementById(self.current_page.name).style.pointerEvents='all'
             },500)
@@ -77,6 +99,10 @@ export default class PagesManager {
     }    
     
     async hide(name,animate,direction){
+        
+        if(this.current_page.name === 'PageLogin')
+            await bhouse.components.Menu.hideMenu()
+        
         if( animate === undefined || animate === null )
             animate = true
             
@@ -105,7 +131,7 @@ export default class PagesManager {
 
     }
     async goToLogin(){
-        let component = this.components.find(page => page.name === 'PageLogin' )
+        let component = this.components.pages.find(page => page.name === 'PageLogin' )
         let view = component.class
         bhouse.components['PageLogin'] = new view(bhouse)
         if( this.current_page === null ){
@@ -123,14 +149,26 @@ export default class PagesManager {
         default_css.type = 'text/css'
         default_css.rel  = 'stylesheet'
         default_css.href = settings.url.frontend+"styles.css"
-        for(let component of this.components ){
+        for(let component of this.components.pages ){
+
             let link = document.createElement('link')
             link.type = 'text/css'
             link.rel = 'stylesheet'
             link.href = settings.url.frontend+"/components/"+component.name+"/template.css"
             document.head.appendChild(link)
             document.getElementById('app').innerHTML += `<div class="page" id=${component.name} ></div>`
-            let el            = document.getElementById(component.name)
+            let el                 = document.getElementById(component.name)
+            el.style.display       = 'none'
+            el.style.pointerEvents = 'none'
+        }
+        for(let component of this.components.tools){
+            let link = document.createElement('link')
+            link.type = 'text/css'
+            link.rel = 'stylesheet'
+            link.href = settings.url.frontend+"/components/"+component.name+"/template.css"
+            document.head.appendChild(link)
+            document.getElementById('app').innerHTML += `<${component.name}>${ await bhouse.components.Menu.getHtml() }</${component.name}>`
+            let el                 = document.getElementsByTagName(component.name)[0]
             el.style.display       = 'none'
             el.style.pointerEvents = 'none'
         }
@@ -138,3 +176,4 @@ export default class PagesManager {
 }
 
 bhouse.components['PagesManager'] =  new PagesManager(bhouse) 
+bhouse.components['Menu']         =  new Menu(bhouse)

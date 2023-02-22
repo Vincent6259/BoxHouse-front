@@ -1,7 +1,7 @@
 import Toolbox  from '../../shared/js/Toolbox.js'
 import { settings }  from '../../settings.js'
 
-export default class PageHome {
+export default class Menu {
 
 
   constructor(bhouse) {
@@ -9,9 +9,7 @@ export default class PageHome {
     this.buttons = null
     this.rounds  = null
     this.toolbox = new Toolbox()
-    this.name    = 'PageHome'
-
-    //this.toolbox.doNotFuckWithMe()
+    this.name    = 'Menu'
   }
 
   async bindEvents(){
@@ -22,6 +20,26 @@ export default class PageHome {
     await this.bindEvents()
   }
   
+  async showMenu(){
+    document.getElementsByTagName('menu')[0].style.opacity       = 1
+    document.getElementsByTagName('menu')[0].style.pointerEvents = 'all'
+    document.getElementsByTagName('menu')[0].style.display       = 'block'
+  }
+  
+  async hideMenu(){
+    document.getElementsByTagName('menu')[0].style.opacity = 0
+    document.getElementsByTagName('menu')[0].style.pointerEvents = 'none'
+    document.getElementsByTagName('menu')[0].style.display       = 'none'
+  }
+  async selectSegment(index){
+    console.log('index :'+index)
+    for(let segment of document.getElementsByClassName('segment'))
+      segment.innerHTML = ''
+      
+    console.log( document.getElementsByClassName('segment')[0] )
+    let el = document.getElementsByClassName('segment')[index]
+    el.innerHTML = `<div class="selector"></div>`
+  }
   async getHtml(){         
     const response = await fetch(settings.url.frontend+"/components/"+this.name+"/template.html")
     const text = await response.text()
