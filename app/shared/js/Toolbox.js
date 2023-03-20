@@ -48,24 +48,24 @@ export default class Toolbox{
     }
 
     async doNotFuckWithMe(){
-      if( bhouse.components.PagesManager.current_page.name !== 'PageLogin' ){
+      if( bhouse.PagesManager.current_page.name !== 'PageLogin' ){
         if( !sessionStorage.getItem('session') )
-          bhouse.components.PagesManager.show('PageLogin')
+          bhouse.PagesManager.show('PageLogin')
         else{
           let session = JSON.parse(sessionStorage.getItem('session'))
           let mail    = session.mail
           this.data   = await this.database.get({ collection:'user', mail:session.mail, pk_id: session.pk_id  })
           if( this.data === 'nok_user' || this.data.pk_id !== session.pk_id && this.data.mail !== session.mail && this.data.firstame !== session.firstame ){
-            await bhouse.components.PagesManager.show('PageLogin')
+            await bhouse.PagesManager.show('PageLogin')
           }
         }
-      }else if(bhouse.components.PagesManager.current_page.name === 'PageLogin'){
+      }else if(bhouse.PagesManager.current_page.name === 'PageLogin'){
         if( !sessionStorage.getItem('session') ){ /* STAY ON LOGIN PAGE */ }
         else{
           let session = JSON.parse(sessionStorage.getItem('session'))
           this.data   = await this.database.get({ collection:'user', mail:session.mail, pk_id: session.pk_id  })
           if( this.data !== 'nok_user' || this.data.pk_id === session.pk_id && this.data.mail === session.mail && this.data.firstame === session.firstame && this.data.lastname === session.lastname ){
-            await bhouse.components.PagesManager.show('PageHome')
+            await bhouse.PagesManager.show('PageHome')
           }
         }
       }

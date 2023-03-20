@@ -42,8 +42,9 @@ export default class PageLogin {
     if(this.data !== 'nok_user'){
       el_error.style.display = "none"
       el_error.innerHTML  = ""
+      console.log(bhouse.PagesManager)
       await bhouse.core.auth.createSession(this.data.pk_id,this.data.mail,this.data.firstname,this.data.lastname)
-      await bhouse.components.PagesManager.show({ page:'PageHome',animate:true, direction: 'right' })
+      await bhouse.PagesManager.show({ page:'PageHome',animate:true, direction: 'right' })
     }else{
       el_error.style.display = "block"
       el_error.innerHTML  = "IDENTIFIANTS INVALIDES"

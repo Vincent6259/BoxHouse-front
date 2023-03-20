@@ -31,20 +31,22 @@ export default class Menu {
     document.getElementsByTagName('menu')[0].style.pointerEvents = 'none'
     document.getElementsByTagName('menu')[0].style.display       = 'none'
   }
+  
   async selectSegment(index){
     console.log('index :'+index)
     for(let segment of document.getElementsByClassName('segment'))
       segment.innerHTML = ''
       
-    console.log( document.getElementsByClassName('segment')[0] )
     let el = document.getElementsByClassName('segment')[index]
     el.innerHTML = `<div class="selector"></div>`
   }
+  
   async getHtml(){         
     const response = await fetch(settings.url.frontend+"/components/"+this.name+"/template.html")
     const text = await response.text()
     return text
   }
+  
   async getCSS(){
     const response = await fetch(settings.url.frontend+"/components/"+this.name+"/template.css")
     const text = await response.text()

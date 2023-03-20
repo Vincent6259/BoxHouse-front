@@ -2,24 +2,26 @@ import Toolbox       from '../../shared/js/Toolbox.js'
 import { settings }  from '../../settings.js'
 import { bhouse }    from '../../bhouse.js'
 
-export default class PageHome {
-
-
-  constructor(bhouse) {
-    this.session = null
-    this.buttons = null
-    this.rounds  = null
+export default class PopupScan {
+  
+  constructor(){
+    // -- Properties
+    let self     = this
+    this.data    = null
     this.toolbox = new Toolbox()
-    this.name    = 'PageHome'
-    bhouse       = bhouse
+    this.name    = "PopupScan"
   }
 
   async bindEvents(){
   }
 
-  async load(){
-    await bhouse.PagesManager.pages.Menu.selectSegment(0)
-    await this.bindEvents()
+  async show(){
+    document.getElementById('popupScan')
+    // transform: translate(-50%,-50%);
+  }
+  
+  async hide(){
+    
   }
   
   async getHtml(){         
@@ -34,3 +36,4 @@ export default class PageHome {
   } 
 
 }
+
